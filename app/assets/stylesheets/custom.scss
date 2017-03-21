@@ -1,0 +1,632 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    position    : absolute;
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-left: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+#select_texture
+{
+    position        : absolute;
+    width           : 100%;
+    height          : 180px;
+    left            : 0px;
+    box-shadow      : 0px 0px 20px black;
+    border          : 10px solid rgb(255, 0, 80);
+    background      : rgba(255, 255, 255, 0.8);
+    bottom          : 0px;
+    z-index         : 50;
+    overflow        : hidden;
+    display         : none;
+}
+
+#select_texture ul
+{
+    list-style  : none;
+    margin-top  : 10px;
+    margin-left : 175px;
+    padding     : 0px;
+    height      : 150px;
+    white-space : nowrap;
+    float       : left;
+    overflow-x  : auto;
+    width       : 100%;
+}
+
+#select_texture h3
+{
+    display         : none;
+    margin-left     : 65px;
+}
+
+#select_texture li
+{
+    cursor          : pointer;
+    width           : 120px;
+    margin          : 5px;
+    margin-bottom   : 0px;
+    border          : 1px solid #aaa;
+    box-shadow      : 0px 0px 10px grey;
+    position        : relative;
+    display         : inline-block;
+}
+
+#select_texture li img 
+{
+    width           : 118px;
+    height          : 118px;
+    padding         : 5px;
+    float           : left;
+}
+
+#select_texture li.sel
+{
+    background-color: white;
+    border          : 1px solid blue;
+    box-shadow      : 0px 0px 10px blue;
+}
+
+#select_texture p
+{
+    position    : absolute;
+    background  : rgba(0, 0, 0, 0.65);
+    width       : 100%; 
+    height      : 20px; 
+    color       : white;
+    font-size   : 15px;
+    text-align  : center;
+    bottom      : 0px;
+    margin      : 0px;
+    padding-top : 2px; 
+    padding-bottom  : 4px;
+    padding-left    : 2px; 
+    padding-right   : 2px; 
+}
+
+#over_section
+{
+    position    : absolute;
+    width       : 400px;
+    height      : 400px;
+    margin-top  : 20px;
+    margin-left : -230px;
+    z-index     : 99;
+    background  : white;
+    border-radius   : 300px;
+    border      : 10px solid rgb(255, 0, 80);
+}
+#btn_list_texture
+{
+    cursor      : pointer;
+    margin-top  : 22px;
+    position    : absolute;
+    z-index     : 110;
+}
+
+#btn_list_texture img
+{
+    width       : 36px;
+    float       : left;
+    margin-left : 15px;
+    border-radius: 5px;
+    box-shadow  : 0px 0px 10px gray;
+}
+
+#btn_list_texture h2
+{
+    width       : 210px;
+    /*font-family : arial;*/
+    font-size   : 20px;
+    line-height : 37px;
+    margin-top  : 0px;
+    margin-left : 60px;
+    color       : white;
+    padding-left: 20px;
+    background  : rgba(0, 0, 0, 0.7);
+    border      : 1px solid white;
+    border-radius   : 5px;
+}
+
+#main
+{
+    width: 100%;
+    height: 100%;
+}
+
+#buttonbar
+{
+    position: absolute;
+    right: 20px;
+    top:12px;
+    z-index: 10;
+}
+
+.objectButton
+{
+    width: 150px;
+    height: auto;
+    margin-top: 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.objectButton h2
+{
+    width       : 130px;
+    /*font-family : arial;*/
+    font-size   : 20px;
+    text-align  : center;
+    line-height : 35px;
+    margin-top  : 0px;
+    color       : white;
+    background  : rgba(0, 0, 0, 0.7);
+    border      : 1px solid white;
+    border-radius   : 5px;
+}
+
+#renderCanvas {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    height: calc(100% - 60px);
+    touch-action: none;
+    -ms-touch-action: none;
+    cursor  : pointer;
+}
+
+#canvas_2D {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    height: calc(100% - 60px);
+    touch-action: none;
+    -ms-touch-action: none;
+    pointer-events: none;
+    display     : none;
+}
+
+#left_menu
+{
+    position    : absolute;
+    width       : 200px;
+    height      : 200px;
+    left        : 0px;
+    bottom      : 0px;
+}
+
+#right_menu
+{
+    position    : absolute;
+    width       : 300px;
+    height      : 100%;
+    right       : 0px;
+}
+
+#right_over_section
+{
+    position    : absolute;
+    width       : 10px;
+    height      : calc(100% - 80px);
+    margin-top  : 80px;
+    z-index     : 99;
+    right       : 0px;
+}
+#btn_list_model
+{
+    cursor      : pointer;
+    margin-top  : 22px;
+    position    : absolute;
+    z-index     : 110;
+    right       : 0px;
+}
+
+#btn_list_model img
+{
+    width       : 36px;
+    float       : right;
+    margin-right : 15px;
+    border-radius: 5px;
+    box-shadow  : 0px 0px 10px gray;
+}
+
+#btn_list_model h2
+{
+    width       : 210px;
+    /*font-family : arial;*/
+    font-size   : 20px;
+    line-height : 37px;
+    margin-top  : 0px;
+    margin-right : 60px;
+    color       : white;
+    padding-left: 20px;
+    background  : rgba(0, 0, 0, 0.7);
+    border      : 1px solid white;
+    border-radius   : 5px;
+}
+
+#select_model
+{
+    position        : absolute;
+    width           : 100%;
+    height          : 180px;
+    left            : 0px;
+    box-shadow      : 0px 0px 20px black;
+    border          : 10px solid rgb(255, 0, 80);
+    background      : rgba(255, 255, 255, 0.8);
+    bottom          : 0px;
+    z-index         : 50;
+    overflow        : hidden;
+    display         : none;
+}
+
+#select_model ul
+{
+    list-style  : none;
+    margin-top  : 10px;
+    margin-left : 175px;
+    padding     : 0px;
+    height      : 150px;
+    white-space : nowrap;
+    float       : left;
+    overflow-x  : auto;
+    width       : 100%;
+}
+
+#select_model h3
+{
+    display         : none;
+    margin-left     : 65px;
+}
+
+#select_model li
+{
+    cursor          : pointer;
+    width           : 120px;
+    margin          : 5px;
+    margin-bottom   : 0px;
+    border          : 1px solid #aaa;
+    box-shadow      : 0px 0px 10px grey;
+    position        : relative;
+    display         : inline-block;
+}
+
+#select_model li img 
+{
+    width           : 118px;
+    height          : 118px;
+    padding         : 5px;
+    float           : left;
+}
+
+#select_model li.sel
+{
+    background-color: white;
+    border          : 1px solid blue;
+    box-shadow      : 0px 0px 10px blue;
+}
+
+#select_model p
+{
+    position    : absolute;
+    background  : rgba(0, 0, 0, 0.65);
+    width       : 100%; 
+    height      : 20px; 
+    color       : white;
+    font-size   : 15px;
+    text-align  : center;
+    bottom      : 0px;
+    margin      : 0px;
+    padding-top : 2px; 
+    padding-bottom  : 4px;
+    padding-left    : 2px; 
+    padding-right   : 2px; 
+}
+
+#select_measurement
+{
+    position        : absolute;
+    height          : 180px;
+    left            : 0px;
+    box-shadow      : 0px 0px 20px black;
+    border          : 10px solid rgb(255, 0, 80);
+    background      : rgba(255, 255, 255, 0.8);
+    bottom          : 0px;
+    z-index         : 50;
+    overflow        : hidden;
+    display         : none;
+}
+
+#select_measurement ul
+{
+    list-style  : none;
+    margin-top  : 10px;
+    margin-left : 185px;
+    margin-right: 20px;
+    padding     : 0px;
+    height      : 150px;
+    white-space : nowrap;
+    float       : left;
+    overflow-x  : auto;
+    width       : 100%;
+}
+
+#select_measurement h3
+{
+    display         : none;
+    margin-left     : 65px;
+}
+
+#select_measurement li
+{
+    cursor          : pointer;
+    width           : 120px;
+    margin          : 5px;
+    margin-bottom   : 0px;
+    border          : 1px solid #aaa;
+    box-shadow      : 0px 0px 10px grey;
+    position        : relative;
+    display         : inline-block;
+}
+
+#select_measurement li img 
+{
+    width           : 118px;
+    height          : 118px;
+    padding         : 5px;
+    float           : left;
+}
+
+#select_measurement li.sel
+{
+    background-color: white;
+    border          : 1px solid blue;
+    box-shadow      : 0px 0px 10px blue;
+}
+
+#select_measurement p
+{
+    position    : absolute;
+    background  : rgba(0, 0, 0, 0.65);
+    width       : 100%; 
+    height      : 20px; 
+    color       : white;
+    font-size   : 15px;
+    text-align  : center;
+    bottom      : 0px;
+    margin      : 0px;
+    padding-top : 2px; 
+    padding-bottom  : 4px;
+    padding-left    : 2px; 
+    padding-right   : 2px; 
+}
+
+#signup_title h1
+{
+    text-align     : center;
+}
+
+#upload_texture h1
+{
+    text-align     : center;
+}
+
+#login_title h1
+{
+    text-align     : center;   
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+#banner
+{
+    position    : absolute;
+    width       : 100%;
+    height      : 60px;
+    background  : #06535d;
+    border      : 1px solid rgb(130, 161, 104);
+}
+
+#logo
+{
+    position    : absolute;
+    top         : 86px;
+    left        : -5px;
+    z-index     : 100;
+    width       : 117px;
+    height      : 117px;
+}
+
+#logo img
+{
+    width       : 100%;
+    height      : 100%;
+}
+
+#info_section
+{
+    position    : absolute;
+    right       : 8px;
+    top         : 7px;
+}
+
+#info_section h1
+{
+    font-size   : 24px;
+    color       : white;
+    float       : left;
+    margin      : 0px 0px 0px 10px
+}
+
+#title h1
+{
+    text-align  : center;
+    color       : white;
+    font-size   : 47px;
+    margin-top  : 5px;
+}
+
+#menu_info
+{
+    margin-top  : 30px;
+}
+
+#menu_info a
+{
+    float       : left;
+    width       : 70px;
+    font-size   : 15px;
+    color       : #d6c8c8;
+    text-align  : center;
+}
+
+#menu_area
+{
+    position    : absolute;
+    width       : 100%;
+    height      : 180px;
+    left        : -5000px;
+    bottom      : 0px;
+}
+
+.menu
+{
+    position    : absolute;
+    width       : 70px;
+    height      : 70px;
+    z-index     : 100;
+}
+
+#menu_section
+{
+    position    : absolute;
+    top         : -4px;
+    left        : -4px;
+}
+
+.menu img
+{
+    width       : 100%;
+    height      : 100%;
+    -webkit-transition: all 0.2s linear;
+    transition  : all 0.2s linear;
+    cursor      : pointer;
+}
+
+.menu img:hover
+{
+    -webkit-transform: scale3d(1.2, 1.2, 1);
+    transform   : scale3d(1.2, 1.2, 1);
+}
+
+#btn_tool
+{
+    left        : 10px;
+    top         : 10px;
+}
+
+#btn_texture
+{
+    left        : 80px;
+    top         : 60px;
+}
+
+#btn_component
+{
+    left        : 125px;
+    top         : 130px;
+}

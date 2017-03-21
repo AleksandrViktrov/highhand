@@ -1,0 +1,36 @@
+{:uriI"šfile://app/assets/javascripts/babylonlib/loaders-2.4/config.json?type=application/json&id=7cddb36a7ba9289cef7730a740dfbb1c40981a71b28f733b63700b05c6dd0db1:ET:load_pathI"app/assets/javascripts;T:filenameI">app/assets/javascripts/babylonlib/loaders-2.4/config.json;T:	nameI""babylonlib/loaders-2.4/config;T:logical_pathI"'babylonlib/loaders-2.4/config.json;T:content_typeI"application/json;T:sourceI"Í{
+  "loaders": {
+    "stl": {
+      "files": ["STL/babylon.stlFileLoader.ts"],
+      "output": "./STL",
+      "filename": "babylon.stlFileLoader.js"
+    },
+
+    "obj": {
+      "files": ["OBJ/babylon.objFileLoader.ts"],
+      "output": "./OBJ",
+      "filename": "babylon.objFileLoader.js"
+    },
+
+    "gltf": {
+      "files": [
+        "glTF/babylon.glTFFileLoaderInterfaces.ts",
+        "glTF/babylon.glTFFileLoader.ts",
+        "glTF/babylon.glTFFileLoaderUtils.ts",
+        "glTF/babylon.glTFFileLoaderExtension.ts",
+        "glTF/babylon.glTFBinaryExtension.ts"
+      ],
+      "output": "./glTF",
+      "filename": "babylon.glTFFileLoader.js"
+    }
+  },
+
+  "defines": [
+    "../dist/preview release/*.d.ts"
+  ]
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"Lfile-digest://app/assets/javascripts/babylonlib/loaders-2.4/config.json;TTF:charsetI"
+utf-8;F:digest"%ÀIŠØºìãëº^$Txj1ìîqB…{Ò»#?ü&–:lengthiÍ:dependencies_digest"%˜Tì>„¥@TUçÛ‰ÌohÒ€UF6ú‡„Û÷Ä†X¯††:idI"E7cddb36a7ba9289cef7730a740dfbb1c40981a71b28f733b63700b05c6dd0db1;F:
+mtimel+&j¦X
